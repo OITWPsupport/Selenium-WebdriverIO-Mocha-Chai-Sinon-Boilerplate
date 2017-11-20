@@ -9,26 +9,26 @@ var searchString = 'jessen';
 describe(process.env.TESTSITE + '.boisestate.edu: Check that this site successfully uses the new search (Google Custom Search Element API 2.0)', function() {
     it('should submit a search', function () {
         browser.url(URL);
-        browser.waitForExist('#q', 5000);
+        browser.waitForExist('#q', 2500);
         browser.setValue('#q', searchString);
         browser.click('#searchsubmit');
     });
     it('should have the proper page element for the 2.0 API\'s search results', function () {
-        browser.waitForExist('#___gcse_0', 5000);
+        browser.waitForExist('#___gcse_0', 2500);
         chai.expect('#___gcse_0').to.be.there;
     });
     it.skip('should not have the page element from the old 1.0 API\'s search results', function () {
         // gcsc-branding is a page element present in the results page of
         // the old search that should not show up in the revised search
-//        browser.waitForExist('.gcsc-branding', 5000);
+        browser.waitForExist('.gcsc-branding', 5000);
         chai.expect('.gcsc-branding').to.not.be.there;
     });
     it('should have the search box on the search results page', function() {
-	browser.waitForExist('#gsc-i-id1', 5000);
+	browser.waitForExist('#gsc-i-id1', 2500);
         chai.expect('#gsc-i-id1').to.be.there;
     });
     it('should have the search button on the search results page', function() {
-        browser.waitForExist('.gsc-search-button', 5000);
+        browser.waitForExist('.gsc-search-button', 2500);
         chai.expect('.gsc-search-button').to.be.there;
     });
     it('should end up at a URL that contains the q and site parameters', function() {

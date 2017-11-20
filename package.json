@@ -39,7 +39,9 @@
     "postinstall": "npm install -g selenium-standalone",
     "kill-selenium": "kill -15 $( lsof -i:4444 -t )",
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "test_var": "./node_modules/.bin/wdio wdio.conf.js --spec ./test/specs/search_var.js",
+    "test_var": "./node_modules/.bin/wdio wdio.conf.js --spec ./test/specs/search_var.js ",
+    "test_var2": "./node_modules/.bin/wdio wdio.conf.js --spec ./test/specs/youtube-accessibility.spec.js",
+    "migration": "./node_modules/.bin/wdio wdio.conf.js --suite migration",
     "help": "./node_modules/.bin/wdio --help"
   },
   "author": "Michael Guild <michaelguild13@gmail.com> <mg@threde.com>",
