@@ -156,6 +156,8 @@ exports.config = {
         global.Assertion = chai.Assertion;
         global.assert = chai.assert;
         chai.Should();
+
+	console.log('OK HERE WE GO');
     },
     //
     // Hook that gets executed before the suite starts
@@ -194,8 +196,9 @@ exports.config = {
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    // after: function (result, capabilities, specs) {
-    // },
+    after: function (result, capabilities, specs) {
+	console.log('OK ALL DONE FOR NOW THANKS');
+    },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
